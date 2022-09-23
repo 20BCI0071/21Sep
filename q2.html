@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+    <script type="text/javascript">
+        function start() {
+            let line1 = document.getElementById('line1').value;
+            let line2 = document.getElementById('line2').value;
+            let line3 = document.getElementById('line3').value;
+            let line4 = document.getElementById('line4').value;
+
+            let splitStr = line1.split("");
+            let reverseArr = splitStr.reverse();
+            document.getElementById('output').innerHTML = "Line 1: " + reverseArr.join("") + "<br><br>" + "Line 2: ";
+
+            for (let i = 0; i < line2.length; ++i) {
+                if (i % 2 == 0) document.getElementById('output').innerHTML += line2[i].toUpperCase();
+                else document.getElementById('output').innerHTML += line2[i];
+            } document.getElementById('output').innerHTML += "<br><br>" + "Line 3: ";
+
+            for (let i = 1; i < line3.length; i += 2) {
+                document.getElementById('output').innerHTML += line3[i];
+            } document.getElementById('output').innerHTML += "<br><br>";
+
+            let o = 0, t = 0, w = 0;
+            let positions = "";
+            for (let i = 0; i < line4.length; ++i) {
+                if (line4[i].toLowerCase() == 'o') {
+                    positions += i + " ";
+                    o++;
+                }
+                if (line4[i].toLowerCase() == 't') t++;
+                if (line4[i].toLowerCase() == 'w') w++;
+            }
+            document.getElementById('output').innerHTML += "Line 4: " + "<br>"
+            document.getElementById('output').innerHTML += "No. of O's: " + o + "<br>";
+            document.getElementById('output').innerHTML += "No. of T's: " + t + "<br>";
+            document.getElementById('output').innerHTML += "No. of W's: " + w + "<br>";
+            document.getElementById('output').innerHTML += "Postions of O's: " + positions + "<br>";
+        }
+    </script>
+</head>
+<body>
+    <input style="width: 400px; height: 20px;" placeholder="Line1" id="line1"/><br><br>
+    <input style="width: 400px; height: 20px;" placeholder="Line2" id="line2"/><br><br>
+    <input style="width: 400px; height: 20px;" placeholder="Line3" id="line3"/><br><br>
+    <input style="width: 400px; height: 20px;" placeholder="Line4" id="line4"/><br><br>
+    <button onclick="start()">Submit</button>
+    <p id="output"></p>
+</body>
+</html>

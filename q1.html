@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RandInt</title>
+        <script>
+            function add() {
+                let first = parseInt(document.getElementById('first').value);
+                let second = parseInt(document.getElementById('second').value);
+                let total = first + second
+                if ((total) > parseInt(21)) {
+                    document.getElementById('output').innerHTML = "You Lost";
+                }  else if ((total) < parseInt(21)) {
+                    document.getElementById('output').innerHTML = "Get another value from user";
+                    document.getElementById('first').value = "";
+                    document.getElementById('second').value = "";
+                } else if ((total) = parseInt(21)) {
+                    document.getElementById('output').innerHTML = "You got 21";
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <input placeholder="First" id="first" /><br><br>
+        <input placeholder="Second" id="second" /><br><br>
+        <button onclick="add()">Submit</button><br><br>
+        <p id="output"></p>
+    </body>
+
+</html>
